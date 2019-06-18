@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY} from './action-types/cart-actions'
+import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY, TEXT_INPUT,CHECKOUT} from './action-types/cart-actions'
 
 //add cart action
 export const addToCart= (id)=>{
@@ -26,5 +26,15 @@ export const addQuantity=(id)=>{
     return{
         type: ADD_QUANTITY,
         id
+    }
+}
+export const information=()=>{
+    return{
+        type: TEXT_INPUT
+    }
+}
+export const checkout=()=> {
+    return{
+        type: CHECKOUT
     }
 }

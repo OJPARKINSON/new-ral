@@ -1,5 +1,10 @@
 *{margin: 0;box-sizing: inherit;line-height: 1.5;padding:0;font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
-/* Home */
+/* home */
+.image-gallery {
+    width: 70%;
+    margin: 0 auto;
+}
+/* Shop */
 .nav-wrapper {
     display: block;
     background-color: #444;
@@ -9,6 +14,7 @@
 .container {
     width: 70%;
     margin: 0 auto;
+    margin-bottom: 3vw;
 }
 .brand-logo {
     display: inline-block;
@@ -35,10 +41,14 @@
     transition: background-color .3s;
     font-size: 1.3vw;
     color: #fff;
-    text-decoration: none;
+    text-decoration: underline;
     display: block;
     padding: .9vw .7vw 0 .7vw;
     cursor: pointer;
+}
+.subLinks li a:hover {
+    text-decoration: none;
+    transition: 0.7s;
 }
 .homeTitle {
     margin: 0 auto;
@@ -64,9 +74,9 @@
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 .cardImage {
-    width: 98%;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 0.2vw;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 .cardTitle {
     box-sizing: inherit;
@@ -74,7 +84,10 @@
     font-size: 1.5vw;
     font-weight: 400;
     max-width: 100%;
-    padding: 0.5vw 0;
+    padding: 0 1vw;
+}
+.card-content {
+    padding: 1vw!important;
 }
 .addBtn i {
     float: right;
@@ -87,7 +100,23 @@
     font-size: 2vw;
     line-height: .9;
     cursor: pointer;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
 }
+.addBtn i:active ,.btn:active {
+    box-shadow: none;
+}
+.collection input[type=text] {
+    display: block;
+    margin: .8vw;
+}
+.error {
+    padding-left: 1vw;
+    font-size: .8vw;
+    color: red;
+}
+
+
+
 /* Cart */
 h5 {
     font-size: 1.64rem;
@@ -132,6 +161,7 @@ a i {
     margin-right: .5vw;
 }
 .Down {
+    line-height: 100;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
@@ -172,4 +202,60 @@ a i {
     font-size: 14px;
     outline: 0;
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+.emptyText {
+    text-align: center;
+    padding: 2vw 0;
+    font-size: 1.2vw;
+    font-weight: 700;
+}
+/* Accordan */
+
+.acordian {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 3vw;
+}
+@media only screen and (max-width: 1000px) {
+    .nav-wrapper {
+        height: 10vh;
+        text-align: center;
+    }
+    .brand-logo {
+        text-align: center;
+        margin-top:2vw;
+    }
+    .subLinks {
+        text-align: center;
+        float: none;
+    }
+    .subLinks li {
+        float: none;
+        display: inline-block;
+        list-style-type: none;
+    }
+    .subLinks li a {
+        font-size: 5vw;
+        text-decoration: underline;
+    }
+    .subLinks li a :hover {
+        text-decoration: none;
+    }
+    .container {
+        width: 90%;
+    }
+    .emptyText {
+        font-size: 4vw;
+    }
+    .collection input[type=text] {
+        font-size: 3vw;
+        border-width: 0.2vw;
+        margin: 2vw;
+    }
+    .addBtn i {
+        height: 5vw;
+        width: 5vw;
+        font-size: 5vw;
+    }
+
 }

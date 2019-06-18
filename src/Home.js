@@ -1,48 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { addToCart } from './components/actions/cartActions'
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
 
  class Home extends Component{
-    
-    handleClick = (id)=>{
-        this.props.addToCart(id); 
-    }
-
     render(){
-        let itemList = this.props.items.map(item => {
-            return(
-                <div className="card" key={item.id}>
-                    <img className="cardImage" src={item.img} alt={item.title}/>
-                    <span className="cardTitle">{item.title}</span>
-                    <span to="/" className="addBtn" onClick={()=>{this.handleClick(item.id)}}><i>+</i></span>
-                    <div className="card-content">
-                        <p>{item.desc}</p>
-                        <p><b>Price: {item.price}$</b></p>
-                    </div>
-                 </div>
-            )
-        })
+        const images = [
+            {
+                original: 'https://www.simplyrecipes.com/wp-content/uploads/2013/04/green-eggs-ham-sandwich-horiz-a-1800.jpg',
+            },
+            {
+              original: 'https://www.sickchirpse.com/wp-content/uploads/2017/08/Bacon-Sarnie.jpg',
+            },
+            {
+              original: 'https://www.saltandlavender.com/wp-content/uploads/2016/09/salmonsandwich2.jpg',
+            }
+          ]
+       
+          return (
+            <ImageGallery showThumbnails={false} showPlayButton={false} items={images} />
+          );
+        }
+    }
 
-        return(
-            <div className="container">
-                <h3 className="homeTitle">Our items</h3>
-                <div className="box">
-                    {itemList}
-                </div>
-            </div>
-        )
-    }
-}
-const mapStateToProps = (state)=>{
-    return {
-      items: state.items
-    }
-  }
-const mapDispatchToProps= (dispatch)=>{
-    
-    return{
-        addToCart: (id)=>{dispatch(addToCart(id))}
-    }
-}
 
-export default connect(mapStateToProps,mapDispatchToProps)(Home)
+export default connect()(Home)
